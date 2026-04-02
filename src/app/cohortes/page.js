@@ -93,10 +93,10 @@ function NotConnectedView() {
           <Image src="/hero-woman.jpg" alt="Nos cohortes" fill className="object-cover object-top" priority />
           <div className="absolute inset-0"
             style={{ background: 'linear-gradient(to bottom, rgba(50,27,69,0.7) 0%, rgba(98,46,209,0.75) 60%, rgba(50,27,69,0.85) 100%)' }} />
-          <div className="absolute left-6 top-20 opacity-55">
+          <div className="absolute left-6 top-20 opacity-55 animate-float">
             <Image src="/pictos/picto-04.png" alt="" width={68} height={68} className="object-contain" />
           </div>
-          <div className="absolute right-8 bottom-14 opacity-45">
+          <div className="absolute right-8 bottom-14 opacity-45 animate-float-slow">
             <Image src="/pictos/picto-07.png" alt="" width={58} height={58} className="object-contain" />
           </div>
           <div className="absolute right-16 top-14 opacity-35">

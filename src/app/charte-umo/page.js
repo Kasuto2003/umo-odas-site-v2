@@ -284,12 +284,12 @@ export default function CharteUMOPage() {
               </div>
               <h3 className="font-heading font-black text-white text-xl">Validation</h3>
             </div>
-            <p className="text-white/82 text-sm leading-relaxed mb-5 relative z-10">
+            <p className="text-white text-sm leading-relaxed mb-5 relative z-10">
               En suivant ce cours, je reconnais avoir pris connaissance des engagements qui y figurent
               et m&apos;engage à les respecter pour garantir un espace sûr, sorore, féministe et respectueux
               pour toutes les personnes impliquées dans l&apos;Université Militante ODAS.
             </p>
-            <p className="text-white/55 text-xs relative z-10">
+            <p className="text-white/85 text-xs relative z-10">
               Pour tout signalement contacter le Centre ODAS à{' '}
               <a href="mailto:communication@centre-odas.org" className="text-umo-yellow underline hover:text-white transition-colors">
                 communication@centre-odas.org
