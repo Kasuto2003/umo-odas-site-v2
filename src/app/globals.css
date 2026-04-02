@@ -79,7 +79,7 @@ body {
   }
 
   .section-container {
-    @apply max-w-6xl mx-auto px-6 lg:px-8;
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
   .section-title {
@@ -179,6 +179,16 @@ body {
 .animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
 .animate-slide-up   { animation: slide-in-up 0.7s ease forwards; }
 .animate-fade-in    { animation: fade-in 0.6s ease forwards; }
+
+/* ── Responsive helpers ── */
+@media (max-width: 640px) {
+  .hero-pt { padding-top: clamp(90px, 20vw, 130px); }
+  .section-py { padding-top: 3rem; padding-bottom: 3rem; }
+}
+@media (min-width: 641px) {
+  .hero-pt { padding-top: 140px; }
+  .section-py { padding-top: 5rem; padding-bottom: 5rem; }
+}
 
 /* Hover lift universel */
 .hover-lift {

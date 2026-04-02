@@ -104,7 +104,7 @@ function NotConnectedView() {
               clipPath: 'polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)' }} />
           </div>
         </div>
-        <div className="relative section-container text-center text-white" style={{ paddingTop: '140px', paddingBottom: '70px' }}>
+        <div className="relative section-container text-center text-white" style={{ paddingTop: 'clamp(90px, 18vw, 140px)', paddingBottom: '70px' }}>
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-5 text-xs font-heading font-bold tracking-widest uppercase"
             style={{ background: 'rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.9)' }}>
             <span>♀</span> Formation
