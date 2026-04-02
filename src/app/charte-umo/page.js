@@ -183,8 +183,15 @@ export default function CharteUMOPage() {
       {/* CTA */}
       <section className="py-16 bg-white text-center">
         <div className="section-container">
-          <Link href="/candidature" className="btn-primary">
-            Candidater maintenant <ArrowRight className="w-4 h-4"/>
+          <h2 className="font-heading font-black text-umo-purple mb-2"
+            style={{ fontSize: 'clamp(2rem,4vw,3rem)', lineHeight: 1.15 }}>
+            Inscrivez-vous à<br />notre prochaine Cohorte
+          </h2>
+          <p className="text-gray-500 text-sm mb-6 max-w-sm mx-auto">
+            Les candidatures pour la cohorte 2 sont ouvertes jusqu&apos;à épuisement des places.
+          </p>
+          <Link href="/candidature" className="btn-yellow-solid">
+            Candidatez <ArrowRight className="w-4 h-4"/>
           </Link>
         </div>
       </section>

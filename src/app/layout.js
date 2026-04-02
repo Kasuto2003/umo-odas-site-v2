@@ -1,6 +1,7 @@
 import './globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+import ClientProviders from '@/components/layout/ClientProviders'
 import Script from 'next/script'
 
 // ─── Métadonnées SEO du site ──────────────────────────────────────────────
@@ -26,16 +27,18 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr">
       <body>
-        {/* Navbar fixe en haut de toutes les pages */}
-        <Navbar />
+        <ClientProviders>
+          {/* Navbar fixe en haut de toutes les pages */}
+          <Navbar />
 
-        {/* Contenu principal de chaque page */}
-        <main>
-          {children}
-        </main>
+          {/* Contenu principal de chaque page */}
+          <main>
+            {children}
+          </main>
 
-        {/* Footer en bas de toutes les pages */}
-        <Footer />
+          {/* Footer en bas de toutes les pages */}
+          <Footer />
+        </ClientProviders>
 
         {/* Script animations scroll — déclenche .visible sur .fade-up/.fade-left/.fade-right/.scale-in */}
         <Script id="scroll-animations" strategy="afterInteractive">{`
