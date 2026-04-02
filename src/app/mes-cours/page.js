@@ -214,7 +214,7 @@ export default function MesCoursPage() {
         </div>
 
         <div className="relative section-container text-center text-white"
-          style={{ paddingTop: '140px', paddingBottom: '80px' }}>
+          style={{ paddingTop: 'clamp(90px, 18vw, 140px)', paddingBottom: '80px' }}>
           <h1 className="font-heading font-black text-white"
             style={{ fontSize: 'clamp(2.5rem,6vw,4.5rem)', lineHeight: 1.1, marginBottom: '16px' }}>
             Mes cours
@@ -251,7 +251,7 @@ export default function MesCoursPage() {
       <StickerBand />
 
       {/* ── CTA INSCRIPTION ── */}
-      <section className="py-16 bg-white text-center">
+      <section className="py-10 md:py-16 bg-white text-center">
         <div className="section-container">
           <h2 className="font-heading font-black text-umo-purple mb-2"
             style={{ fontSize: 'clamp(2rem,4vw,3rem)', lineHeight: 1.15 }}>

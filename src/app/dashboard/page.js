@@ -70,7 +70,7 @@ export default function DashboardPage() {
       </header>
 
       {/* HERO CONNECTÉ */}
-      <section className="bg-white py-16 relative overflow-hidden">
+      <section className="bg-white py-10 md:py-16 relative overflow-hidden">
         <div className="absolute top-8 right-8 w-16 h-16 rounded-full bg-umo-teal/20" />
         <div className="absolute top-16 right-0 w-10 h-10 rounded-full bg-umo-yellow/30" />
         <div className="absolute bottom-8 left-0 w-20 h-20 rounded-full bg-umo-purple/10 -translate-x-1/2" />
@@ -108,7 +108,7 @@ export default function DashboardPage() {
       <GenderDivider />
 
       {/* 2 COHORTES */}
-      <section className="py-16 bg-white">
+      <section className="py-10 md:py-16 bg-white">
         <div className="section-container">
           <div className="text-center mb-10">
             <h2 className="font-heading font-black text-4xl text-umo-yellow mb-1">2 Cohortes</h2>
@@ -142,7 +142,7 @@ export default function DashboardPage() {
       <GenderDivider />
 
       {/* WEBINAIRES */}
-      <section className="py-16 bg-white">
+      <section className="py-10 md:py-16 bg-white">
         <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
@@ -168,7 +168,7 @@ export default function DashboardPage() {
       <GenderDivider />
 
       {/* RESSOURCES */}
-      <section className="py-16 bg-white">
+      <section className="py-10 md:py-16 bg-white">
         <div className="section-container">
           <div className="text-center mb-10">
             <h2 className="font-heading font-black text-4xl text-umo-purple mb-2">Ressources</h2>
@@ -204,7 +204,7 @@ export default function DashboardPage() {
       <GenderDivider />
 
       {/* TÉMOIGNAGES */}
-      <section className="py-16 bg-white">
+      <section className="py-10 md:py-16 bg-white">
         <div className="section-container">
           <div className="text-center mb-10">
             <h2 className="font-heading font-black text-4xl text-umo-purple mb-2">Témoignages</h2>
@@ -257,7 +257,7 @@ export default function DashboardPage() {
       <GenderDivider />
 
       {/* PARTENAIRES */}
-      <section className="py-16 bg-white">
+      <section className="py-10 md:py-16 bg-white">
         <div className="section-container">
           <div className="text-center mb-10">
             <h2 className="font-heading font-black text-4xl text-umo-purple mb-3">Nos partenaires</h2>

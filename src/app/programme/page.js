@@ -109,7 +109,7 @@ export default function ProgrammePage() {
       {/* ══════════════════════════════════════════
           NOTRE APPROCHE — 3 badges bouclier violets avec lignes pointillées courbes
       ══════════════════════════════════════════ */}
-      <section className="relative bg-white py-16 overflow-hidden" id="approche">
+      <section className="relative bg-white py-10 md:py-16 overflow-hidden" id="approche">
         {/* Feuilles teal — picto-04.png */}
         <div className="absolute left-0 top-1/4 opacity-70">
           <svg width="70" height="140" viewBox="0 0 70 140">
@@ -191,7 +191,7 @@ export default function ProgrammePage() {
       {/* ══════════════════════════════════════════
           8 MODULES — Photo homme + grand 8 + séparateur + grille colorée
       ══════════════════════════════════════════ */}
-      <section className="bg-white py-16">
+      <section className="bg-white py-10 md:py-16">
         <div className="section-container">
 
           {/* Bloc "8 Modules" avec photo à gauche */}
@@ -352,7 +352,7 @@ export default function ProgrammePage() {
       {/* ══════════════════════════════════════════
           PRÊTE À COMMENCER ? — fond blanc, texte centré
       ══════════════════════════════════════════ */}
-      <section className="bg-white py-20 text-center">
+      <section className="bg-white py-12 md:py-20 text-center">
         <div className="section-container fade-up">
           <h2 className="font-heading font-black mb-3"
               style={{fontSize:'clamp(2.2rem,5vw,3.5rem)', color:'#622ed1'}}>

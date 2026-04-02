@@ -136,7 +136,7 @@ export default function ContactPage() {
       <GenderDivider />
 
       {/* ══ INFOS + FORMULAIRE ══ */}
-      <section className="bg-white py-16 relative overflow-hidden">
+      <section className="bg-white py-10 md:py-16 relative overflow-hidden">
         {/* Fleur jaune bas gauche */}
         <div className="absolute left-4 bottom-12 opacity-60 pointer-events-none">
           <Image src="/pictos/picto-05.png" alt="" width={60} height={60} className="object-contain" />
@@ -285,7 +285,7 @@ export default function ContactPage() {
       <GenderDivider />
 
       {/* ══ CTA ══ */}
-      <section className="bg-white py-16 text-center relative overflow-hidden">
+      <section className="bg-white py-10 md:py-16 text-center relative overflow-hidden">
         <div className="absolute left-8 top-1/2 -translate-y-1/2 opacity-30 pointer-events-none">
           <Image src="/pictos/picto-04.png" alt="" width={60} height={60} className="object-contain" />
         </div>

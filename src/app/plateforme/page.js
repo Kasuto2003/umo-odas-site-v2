@@ -42,7 +42,7 @@ export default function PlatformePage() {
         </svg>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-10 md:py-16 bg-white">
         <div className="section-container max-w-2xl">
 
           {/* Tabs */}

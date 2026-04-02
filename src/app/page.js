@@ -122,53 +122,70 @@ export default function HomePage() {
           <Image src="/pictos/picto-19.png" alt="" width={60} height={70} className="object-contain"/>
         </div>
 
-        <div className="section-container w-full py-10 relative z-10">
+        <div className="section-container w-full py-8 md:py-10 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
 
             {/* Texte gauche */}
             <div className={`transition-all duration-700 ${visible?'opacity-100 translate-y-0':'opacity-0 translate-y-10'}`}>
               <h1 className="font-heading font-black leading-[0.93] mb-5">
-                <span className="block text-umo-purple" style={{fontSize:'clamp(3.4rem,6.5vw,5.5rem)'}}>Université</span>
-                <span className="block text-umo-yellow" style={{fontSize:'clamp(3.4rem,6.5vw,5.5rem)'}}>Militante</span>
-                <span className="block text-umo-purple" style={{fontSize:'clamp(3.4rem,6.5vw,5.5rem)'}}>ODAS</span>
+                <span className="block text-umo-purple" style={{fontSize:'clamp(2.8rem,6.5vw,5.5rem)'}}>Université</span>
+                <span className="block text-umo-yellow" style={{fontSize:'clamp(2.8rem,6.5vw,5.5rem)'}}>Militante</span>
+                <span className="block text-umo-purple" style={{fontSize:'clamp(2.8rem,6.5vw,5.5rem)'}}>ODAS</span>
               </h1>
-              <p className="text-gray-700 text-base leading-relaxed mb-7" style={{maxWidth:'380px'}}>
+              <p className="text-gray-700 text-sm md:text-base leading-relaxed mb-6" style={{maxWidth:'380px'}}>
                 Un programme de renforcement de capacités 100% en ligne.
                 Apprendre, échanger et agir ensemble pour l&apos;avortement sécurisé en Afrique.
               </p>
+
+              {/* Stats mobiles — visibles uniquement sous lg */}
+              <div className="flex flex-wrap gap-3 mb-6 lg:hidden">
+                {[
+                  {val:'+200', lbl:'Participants'},
+                  {val:'8',    lbl:'Pays engagés'},
+                  {val:'3',    lbl:'Cohortes'},
+                  {val:'100%', lbl:'En ligne'},
+                ].map((s,i) => (
+                  <div key={i} className="text-center px-4 py-2.5 rounded-2xl"
+                       style={{background:'rgba(213,179,253,0.5)', backdropFilter:'blur(6px)'}}>
+                    <div className="font-heading font-black text-lg leading-none" style={{color:'#622ed1'}}>{s.val}</div>
+                    <div className="text-xs mt-0.5" style={{color:'#622ed1'}}>{s.lbl}</div>
+                  </div>
+                ))}
+              </div>
+
               <Link href="/programme"
-                className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-heading font-bold text-sm
+                className="inline-flex items-center gap-2 px-6 md:px-7 py-3 rounded-full font-heading font-bold text-sm
                            transition-all duration-300 hover:-translate-y-1 hover:bg-umo-yellow"
                 style={{border:'2px solid #ecc92f', color:'#321b45', background:'transparent'}}>
                 Découvrez le programme →
               </Link>
             </div>
 
-            {/* Personnage + stats — picto-02.png (vraie illustration) */}
-            <div className="relative flex justify-center items-center" style={{minHeight:'460px'}}>
+            {/* Personnage + stats flottantes (desktop) */}
+            <div className="relative flex justify-center items-center" style={{minHeight:'400px'}}>
 
               {/* Picto-05 : fleur jaune derrière personnage */}
               <div className="absolute top-0 right-4 pointer-events-none opacity-70"
-                   style={{width:'110px', zIndex:1}}>
-                <Image src="/pictos/picto-05.png" alt="" width={110} height={110} className="object-contain"/>
+                   style={{width:'90px', zIndex:1}}>
+                <Image src="/pictos/picto-05.png" alt="" width={90} height={90} className="object-contain"/>
               </div>
 
               {/* VRAI PERSONNAGE — picto-02.png */}
               <div className={`relative z-10 transition-all duration-700 delay-300 ${visible?'opacity-100 translate-y-0':'opacity-0 translate-y-10'}`}
-                   style={{width:'280px', animation: visible ? 'float 6s ease-in-out infinite' : 'none', zIndex:5}}>
+                   style={{width:'240px', animation: visible ? 'float 6s ease-in-out infinite' : 'none', zIndex:5}}>
                 <Image src="/pictos/picto-02.png" alt="Militante UMO ODAS"
-                  width={280} height={360} className="object-contain w-full h-full"
+                  width={240} height={320} className="object-contain w-full h-full"
                   style={{filter:'drop-shadow(0 20px 40px rgba(98,46,209,0.25))'}}/>
               </div>
 
-              {/* Stats flottantes — fond violet clair */}
+              {/* Stats flottantes — desktop uniquement */}
               {[
                 {val:'+200', lbl:'Participants',       pos:{top:'6px',  left:'0'}},
                 {val:'8',    lbl:'Pays\nEngagés',      pos:{top:'6px',  right:'0'}},
                 {val:'3',    lbl:'Cohortes\nréussies', pos:{top:'38%',  left:'-10px'}},
                 {val:'100%', lbl:'En ligne',           pos:{bottom:'60px', right:'0'}},
               ].map((s,i) => (
-                <div key={i} className="absolute text-center z-20 transition-all duration-500"
+                <div key={i} className="absolute text-center z-20 transition-all duration-500 hidden lg:block"
                      style={{...s.pos, background:'rgba(213,179,253,0.65)', borderRadius:'14px',
                              padding:'10px 16px', backdropFilter:'blur(8px)',
                              opacity:visible?1:0, transform:visible?'translateY(0)':'translateY(10px)',
@@ -183,7 +200,7 @@ export default function HomePage() {
       </section>
 
       {/* ════ FEATURES ════ */}
-      <section ref={featRef} className="relative bg-white py-20 overflow-hidden">
+      <section ref={featRef} className="relative bg-white py-12 md:py-20 overflow-hidden">
 
         {/* Décos gauche — feuilles teal picto-03 zones */}
         <div className="absolute left-0 top-0 bottom-0 pointer-events-none opacity-80"
@@ -216,7 +233,7 @@ export default function HomePage() {
           </div>
 
           {/* 3 features haut */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8">
             {features.slice(0,3).map((f,i) => (
               <div key={i} className="text-center px-4 transition-all duration-500"
                    style={{transitionDelay:`${i*120}ms`, opacity:featInView?1:0,
@@ -231,8 +248,8 @@ export default function HomePage() {
             ))}
           </div>
           {/* 2 features bas */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10"
-               style={{maxWidth:'500px', margin:'0 auto 2.5rem'}}>
+          <div className="grid grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-10"
+               style={{maxWidth:'500px', margin:'0 auto 2rem'}}>
             {features.slice(3).map((f,i) => (
               <div key={i} className="text-center px-4 transition-all duration-500"
                    style={{transitionDelay:`${360+i*120}ms`, opacity:featInView?1:0,
@@ -267,7 +284,7 @@ export default function HomePage() {
       <GenderDivider/>
 
       {/* ════ COMMENT ÇA FONCTIONNE ════ */}
-      <section ref={stepsRef} className="bg-white py-20">
+      <section ref={stepsRef} className="bg-white py-12 md:py-20">
         <div className="section-container">
           <div className={`text-center mb-12 transition-all duration-700 ${stepsInView?'opacity-100 translate-y-0':'opacity-0 translate-y-8'}`}>
             <h2 className="font-heading font-black inline-block px-8 py-3 rounded-2xl"
@@ -277,20 +294,20 @@ export default function HomePage() {
           </div>
 
           <div className={`rounded-3xl relative overflow-visible transition-all duration-700 ${stepsInView?'opacity-100 scale-100':'opacity-0 scale-95'}`}
-               style={{background:'#321b45', padding:'48px 32px 48px'}}>
+               style={{background:'#321b45', padding:'32px 20px'}}>
             <div className="hidden lg:block absolute"
                  style={{top:'calc(32px + 50px)', left:'calc(25% - 20px)', width:'calc(50% + 40px)',
                          borderTop:'2.5px dashed rgba(255,255,255,0.2)', zIndex:0}}/>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 relative z-10">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 relative z-10">
               {steps.map((s,i) => (
                 <div key={i} className="bg-white text-center relative transition-all duration-500 hover:scale-105 hover:shadow-2xl"
-                     style={{borderRadius:'120px 120px 24px 24px', padding:'40px 20px 32px',
+                     style={{borderRadius:'100px 100px 20px 20px', padding:'28px 14px 24px',
                              transitionDelay:`${i*100}ms`, opacity:stepsInView?1:0,
                              transform:stepsInView?'translateY(0)':'translateY(24px)',
-                             boxShadow:'0 8px 32px rgba(0,0,0,0.2)', minHeight:'240px'}}>
-                  <div className="font-heading font-black leading-none mb-4"
-                       style={{fontSize:'5.5rem', color:'#622ed1', lineHeight:'.85'}}>{s.num}</div>
-                  <h3 className="font-heading font-bold text-sm mb-3 leading-snug"
+                             boxShadow:'0 8px 32px rgba(0,0,0,0.2)', minHeight:'200px'}}>
+                  <div className="font-heading font-black leading-none mb-3"
+                       style={{fontSize:'clamp(3.5rem,7vw,5.5rem)', color:'#622ed1', lineHeight:'.85'}}>{s.num}</div>
+                  <h3 className="font-heading font-bold text-xs md:text-sm mb-2 leading-snug"
                       style={{color:'#622ed1', textDecoration:'underline'}}>{s.title}</h3>
                   <p className="text-gray-500 text-xs leading-relaxed">{s.desc}</p>
                 </div>
@@ -311,14 +328,14 @@ export default function HomePage() {
       <GenderDivider/>
 
       {/* ════ WEBINAIRES — picto-13.png (laptop officiel) ════ */}
-      <section ref={webRef} className="bg-white py-20">
+      <section ref={webRef} className="bg-white py-12 md:py-20">
         <div className="section-container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className={`transition-all duration-700 ${webInView?'opacity-100 translate-x-0':'opacity-0 -translate-x-8'}`}>
               <h2 className="font-heading font-black leading-tight mb-1"
-                  style={{fontSize:'clamp(2.4rem,4.5vw,3.8rem)', color:'#321b45'}}>Webinaires</h2>
-              <h2 className="font-heading font-black leading-tight mb-5"
-                  style={{fontSize:'clamp(2.4rem,4.5vw,3.8rem)', color:'#ecc92f'}}>&amp; Sessions live</h2>
+                  style={{fontSize:'clamp(2rem,4.5vw,3.8rem)', color:'#321b45'}}>Webinaires</h2>
+              <h2 className="font-heading font-black leading-tight mb-4 md:mb-5"
+                  style={{fontSize:'clamp(2rem,4.5vw,3.8rem)', color:'#ecc92f'}}>&amp; Sessions live</h2>
               <p className="text-sm inline-block px-3 py-1.5 rounded-lg mb-6"
                  style={{background:'rgba(213,179,253,0.3)', color:'#321b45'}}>
                 Des sessions en direct avec nos experts.
@@ -344,7 +361,7 @@ export default function HomePage() {
       <GenderDivider/>
 
       {/* ════ QUI SOMMES NOUS ════ */}
-      <section ref={quiRef} className="bg-white py-20">
+      <section ref={quiRef} className="bg-white py-12 md:py-20">
         <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div className={`relative transition-all duration-700 ${quiInView?'opacity-100 translate-x-0':'opacity-0 -translate-x-8'}`}>
@@ -395,7 +412,7 @@ export default function HomePage() {
       <GenderDivider/>
 
       {/* ════ NOTRE SUPER ÉQUIPE ════ */}
-      <section ref={eqRef} className="bg-white py-20">
+      <section ref={eqRef} className="bg-white py-12 md:py-20">
         <div className="section-container">
           <div className={`text-center mb-12 transition-all duration-700 ${eqInView?'opacity-100 translate-y-0':'opacity-0 translate-y-8'}`}>
             <h2 className="font-heading font-black inline-block px-6 py-2 rounded-2xl"
@@ -403,7 +420,7 @@ export default function HomePage() {
               <span style={{color:'#622ed1'}}>Notre super </span><span style={{color:'#ecc92f'}}>Equipe</span>
             </h2>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 md:gap-8">
             {equipe.map((m,i) => (
               <div key={i} className="text-center group transition-all duration-500"
                    style={{transitionDelay:`${i*70}ms`, opacity:eqInView?1:0,
@@ -425,7 +442,7 @@ export default function HomePage() {
       <GenderDivider/>
 
       {/* ════ TÉMOIGNAGES ════ */}
-      <section ref={temoRef} className="bg-white py-20 overflow-hidden">
+      <section ref={temoRef} className="bg-white py-12 md:py-20 overflow-hidden">
         <div className="section-container">
           <div className={`text-center mb-12 transition-all duration-700 ${temoInView?'opacity-100 translate-y-0':'opacity-0 translate-y-8'}`}>
             <h2 className="font-heading font-black inline-block px-6 py-2 rounded-2xl mb-3"
@@ -437,13 +454,13 @@ export default function HomePage() {
               Des participantes de nos cohortes précédentes partagent leur expérience.
             </p>
           </div>
-          <div className="flex flex-wrap justify-center gap-5 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mb-8 xl:items-start">
             {temoignages.map((t,i) => (
-              <div key={i} className="relative rounded-3xl p-5 flex-shrink-0 hover:-translate-y-2 transition-all duration-500"
-                   style={{background:'#ecc92f', width:'200px', marginTop:bubbleTop[i]+'px',
+              <div key={i} className="relative rounded-3xl p-5 hover:-translate-y-2 transition-all duration-500"
+                   style={{background:'#ecc92f',
                            boxShadow:'0 6px 20px rgba(236,201,47,.4)',
                            transitionDelay:`${i*100}ms`, opacity:temoInView?1:0,
-                           transform:temoInView?`translateY(${bubbleTop[i]}px)`:`translateY(${bubbleTop[i]+30}px)`}}>
+                           transform:temoInView?'translateY(0)':'translateY(30px)'}}>
                 {/* Picto-16 : bulles de chat — petite déco */}
                 <div className="flex items-center gap-1 mb-2">
                   <span style={{color:'rgba(50,27,69,.5)', fontSize:'18px', fontWeight:'900', lineHeight:1}}>&ldquo;&rdquo;</span>
@@ -460,7 +477,7 @@ export default function HomePage() {
       </section>
 
       {/* ════ NOS PARTENAIRES ════ */}
-      <section ref={partRef} className="bg-white py-20">
+      <section ref={partRef} className="bg-white py-12 md:py-20">
         <div className="section-container">
           <div className={`text-center mb-12 transition-all duration-700 ${partInView?'opacity-100 translate-y-0':'opacity-0 translate-y-8'}`}>
             <div className="mx-auto mb-4 w-4 h-4 rounded-sm opacity-45" style={{background:'#622ed1', transform:'rotate(12deg)'}}/>

@@ -297,7 +297,7 @@ export default function CharteUMOPage() {
       <GenderDivider />
 
       {/* ══ CTA ══ */}
-      <section className="bg-white py-16 text-center relative overflow-hidden">
+      <section className="bg-white py-10 md:py-16 text-center relative overflow-hidden">
         <div className="absolute left-10 top-1/2 -translate-y-1/2 opacity-25 pointer-events-none">
           <Image src="/pictos/picto-04.png" alt="" width={58} height={58} className="object-contain" />
         </div>
