@@ -26,14 +26,14 @@ function FaqItem({ faq, index }) {
   const [open, setOpen] = useState(false)
   return (
     <div className={`border-2 rounded-2xl transition-all duration-300 overflow-hidden
-                    ${open ? 'border-odas-blue' : 'border-odas-soft hover:border-odas-blue/30'}`}>
+                    ${open ? 'border-umo-purple' : 'border-umo-soft hover:border-umo-purple/30'}`}>
       <button onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between p-5 text-left gap-4">
-        <span className="font-heading font-semibold text-odas-blue text-sm md:text-base">
+        <span className="font-heading font-semibold text-umo-purple text-sm md:text-base">
           {faq.q}
         </span>
         {open
-          ? <ChevronUp className="w-5 h-5 text-odas-blue flex-shrink-0" />
+          ? <ChevronUp className="w-5 h-5 text-umo-purple flex-shrink-0" />
           : <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />
         }
       </button>
@@ -49,10 +49,10 @@ function FaqItem({ faq, index }) {
 export default function FaqPage() {
   return (
     <>
-      <section className="pt-28 pb-12 bg-gradient-to-br from-odas-dark via-odas-blue to-odas-light">
+      <section className="pt-28 pb-12 bg-gradient-to-br from-umo-dark via-umo-purple to-umo-light">
         <div className="section-container text-center text-white">
           <h1 className="font-heading font-black text-4xl md:text-5xl mb-4">
-            Questions <span className="text-odas-yellow">fréquentes</span>
+            Questions <span className="text-umo-yellow">fréquentes</span>
           </h1>
           <p className="text-white/75 text-lg">Tout ce que vous devez savoir sur l'UMO ODAS.</p>
         </div>
@@ -61,7 +61,7 @@ export default function FaqPage() {
         </svg>
       </section>
 
-      <section className="py-16 bg-odas-bg">
+      <section className="py-16 bg-umo-soft">
         <div className="section-container max-w-3xl">
           <div className="space-y-3 mb-12">
             {faqs.map((faq, i) => <FaqItem key={i} faq={faq} index={i} />)}

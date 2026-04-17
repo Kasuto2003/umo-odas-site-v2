@@ -40,10 +40,10 @@ export default function WebinairesPage() {
 
   return (
     <>
-      <section className="pt-28 pb-12 bg-gradient-to-br from-odas-dark via-odas-blue to-odas-light">
+      <section className="pt-28 pb-12 bg-gradient-to-br from-umo-dark via-umo-purple to-umo-light">
         <div className="section-container text-center text-white">
           <h1 className="font-heading font-black text-4xl md:text-5xl mb-4">
-            Webinaires <span className="text-odas-yellow">&amp; Sessions live</span>
+            Webinaires <span className="text-umo-yellow">&amp; Sessions live</span>
           </h1>
           <p className="text-white/75 text-lg">Des sessions en direct avec nos experts.</p>
         </div>
@@ -52,7 +52,7 @@ export default function WebinairesPage() {
         </svg>
       </section>
 
-      <section className="py-16 bg-odas-bg">
+      <section className="py-16 bg-umo-soft">
         <div className="section-container">
 
           {/* À venir */}
@@ -61,11 +61,11 @@ export default function WebinairesPage() {
             {webinairesAVenir.map((w) => (
               <div key={w.id} className="card p-6">
                 <div className="flex flex-col md:flex-row md:items-center gap-4">
-                  <div className="w-12 h-12 bg-odas-blue rounded-xl flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-umo-purple rounded-xl flex items-center justify-center flex-shrink-0">
                     <Video className="w-6 h-6 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-heading font-bold text-odas-blue text-lg mb-1">{w.titre}</h3>
+                    <h3 className="font-heading font-bold text-umo-purple text-lg mb-1">{w.titre}</h3>
                     <div className="flex flex-wrap gap-4 text-sm text-gray-400">
                       <span className="flex items-center gap-1"><Calendar className="w-4 h-4" /> {w.date}</span>
                       <span className="flex items-center gap-1"><Clock className="w-4 h-4" /> {w.heure}</span>
@@ -89,11 +89,11 @@ export default function WebinairesPage() {
             {webinairesPassees.map((w, i) => (
               <div key={i} className="card p-5 flex items-center justify-between gap-4">
                 <div>
-                  <h3 className="font-heading font-semibold text-odas-blue">{w.titre}</h3>
+                  <h3 className="font-heading font-semibold text-umo-purple">{w.titre}</h3>
                   <p className="text-gray-400 text-sm">{w.date}</p>
                 </div>
                 {w.replay
-                  ? <button className="btn-outline-blue text-xs px-4 py-2">Voir le replay</button>
+                  ? <button className="btn-outline-purple text-xs px-4 py-2">Voir le replay</button>
                   : <span className="text-gray-300 text-xs">Replay non disponible</span>
                 }
               </div>
@@ -108,7 +108,7 @@ export default function WebinairesPage() {
           <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden">
 
             {/* En-tête modal */}
-            <div className="bg-gradient-to-r from-odas-dark to-odas-blue p-6 relative">
+            <div className="bg-gradient-to-r from-umo-dark to-umo-purple p-6 relative">
               <button
                 onClick={fermerModal}
                 className="absolute top-4 right-4 text-white/60 hover:text-white transition-colors"
@@ -130,7 +130,7 @@ export default function WebinairesPage() {
               {statut === 'success' ? (
                 <div className="text-center py-6">
                   <CheckCircle className="w-14 h-14 text-green-500 mx-auto mb-3" />
-                  <h3 className="font-heading font-black text-odas-blue text-xl mb-2">Inscription confirmée !</h3>
+                  <h3 className="font-heading font-black text-umo-purple text-xl mb-2">Inscription confirmée !</h3>
                   <p className="text-gray-400 text-sm mb-6">
                     Vous recevrez un lien de connexion par email avant le webinaire.
                   </p>
@@ -148,7 +148,7 @@ export default function WebinairesPage() {
                       value={form.nom}
                       onChange={e => setForm({ ...form, nom: e.target.value })}
                       placeholder="Aminata Koné"
-                      className="w-full border-2 border-gray-200 rounded-xl px-4 py-2.5 outline-none focus:border-odas-blue transition-colors text-sm"
+                      className="w-full border-2 border-gray-200 rounded-xl px-4 py-2.5 outline-none focus:border-umo-purple transition-colors text-sm"
                     />
                   </div>
                   <div>
@@ -159,7 +159,7 @@ export default function WebinairesPage() {
                       value={form.email}
                       onChange={e => setForm({ ...form, email: e.target.value })}
                       placeholder="aminata@exemple.com"
-                      className="w-full border-2 border-gray-200 rounded-xl px-4 py-2.5 outline-none focus:border-odas-blue transition-colors text-sm"
+                      className="w-full border-2 border-gray-200 rounded-xl px-4 py-2.5 outline-none focus:border-umo-purple transition-colors text-sm"
                     />
                   </div>
                   <div>
@@ -170,7 +170,7 @@ export default function WebinairesPage() {
                       value={form.pays}
                       onChange={e => setForm({ ...form, pays: e.target.value })}
                       placeholder="Côte d'Ivoire"
-                      className="w-full border-2 border-gray-200 rounded-xl px-4 py-2.5 outline-none focus:border-odas-blue transition-colors text-sm"
+                      className="w-full border-2 border-gray-200 rounded-xl px-4 py-2.5 outline-none focus:border-umo-purple transition-colors text-sm"
                     />
                   </div>
 

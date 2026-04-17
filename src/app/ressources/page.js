@@ -31,10 +31,10 @@ export default function RessourcesPage() {
 
   return (
     <>
-      <section className="pt-28 pb-12 bg-gradient-to-br from-odas-dark via-odas-blue to-odas-light">
+      <section className="pt-28 pb-12 bg-gradient-to-br from-umo-dark via-umo-purple to-umo-light">
         <div className="section-container text-center text-white">
           <h1 className="font-heading font-black text-4xl md:text-5xl mb-4">
-            Ressources <span className="text-odas-yellow">publiques</span>
+            Ressources <span className="text-umo-yellow">publiques</span>
           </h1>
           <p className="text-white/75 text-lg">Documents, guides et données en libre accès.</p>
         </div>
@@ -43,7 +43,7 @@ export default function RessourcesPage() {
         </svg>
       </section>
 
-      <section className="py-16 bg-odas-bg">
+      <section className="py-16 bg-umo-soft">
         <div className="section-container">
 
           {/* Filtres interactifs */}
@@ -54,8 +54,8 @@ export default function RessourcesPage() {
                 onClick={() => setFiltre(cat)}
                 className={`px-5 py-2 rounded-full text-sm font-heading font-semibold transition-all duration-200 ${
                   filtre === cat
-                    ? 'bg-odas-blue text-white shadow-md'
-                    : 'bg-white text-odas-blue border-2 border-odas-soft hover:border-odas-blue'
+                    ? 'bg-umo-purple text-white shadow-md'
+                    : 'bg-white text-umo-purple border-2 border-umo-soft hover:border-umo-purple'
                 }`}>
                 {cat}
               </button>
@@ -72,12 +72,12 @@ export default function RessourcesPage() {
             {ressourcesFiltrees.map((r, i) => (
               <div key={i} className="card group">
                 <div className="flex items-start gap-4">
-                  <div className="w-11 h-11 bg-odas-soft rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-odas-blue transition-colors duration-300">
-                    <FileText className="w-5 h-5 text-odas-blue group-hover:text-white transition-colors" />
+                  <div className="w-11 h-11 bg-umo-soft rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-umo-purple transition-colors duration-300">
+                    <FileText className="w-5 h-5 text-umo-purple group-hover:text-white transition-colors" />
                   </div>
                   <div className="flex-1">
-                    <span className="text-xs font-heading font-bold text-odas-teal uppercase tracking-wider">{r.categorie}</span>
-                    <h3 className="font-heading font-bold text-odas-blue mt-0.5 mb-2">{r.titre}</h3>
+                    <span className="text-xs font-heading font-bold text-umo-teal uppercase tracking-wider">{r.categorie}</span>
+                    <h3 className="font-heading font-bold text-umo-purple mt-0.5 mb-2">{r.titre}</h3>
                     <p className="text-gray-400 text-sm leading-relaxed mb-3">{r.desc}</p>
                     <div className="flex items-center gap-3">
                       <span className="badge bg-gray-100 text-gray-500">{r.type}</span>
@@ -86,7 +86,7 @@ export default function RessourcesPage() {
                           href={r.lien}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-1 text-odas-blue text-sm font-heading font-semibold hover:text-odas-dark transition-colors"
+                          className="flex items-center gap-1 text-umo-purple text-sm font-heading font-semibold hover:text-umo-dark transition-colors"
                         >
                           <Download className="w-4 h-4" /> Télécharger
                         </a>
