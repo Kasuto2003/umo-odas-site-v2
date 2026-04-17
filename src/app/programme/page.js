@@ -97,9 +97,10 @@ export default function ProgrammePage() {
             <span style={{fontSize:'clamp(2.4rem,5vw,4rem)', color:'#622ed1'}}>Un programme conçu</span><br/>
             <span style={{fontSize:'clamp(2.4rem,5vw,4rem)', color:'#ecc92f'}}>pour agir</span>
           </h1>
-          <p className="text-gray-600 text-base md:text-lg leading-relaxed" style={{maxWidth:'560px', margin:'0 auto'}}>
+          <p className="text-gray-600 text-base md:text-lg leading-relaxed" style={{maxWidth:'600px', margin:'0 auto'}}>
             8 modules intensifs, un coaching personnalisé, une communauté engagée.
-            Tout ce qu&apos;il faut pour devenir une militante formée et outillée.
+            Tout ce qu&apos;il faut pour devenir une militante formée et outillée,
+            pour faire émerger une nouvelle génération de leaders en faveur de l&apos;avortement sécurisé.
           </p>
         </div>
       </section>
@@ -133,7 +134,7 @@ export default function ProgrammePage() {
         <div className="section-container">
           <div className="text-center mb-14 fade-up">
             <h2 className="font-heading font-black" style={{fontSize:'clamp(2rem,4vw,3rem)', color:'#622ed1'}}>
-              Notre approche
+              Les approches
             </h2>
           </div>
 
@@ -161,24 +162,24 @@ export default function ProgrammePage() {
 
             <div className="fade-up" data-delay="0">
             <BadgeApproche
-              icon="/pictos/picto-14.png"
-              title="Apprentissage progressif"
-              desc="Les modules se débloquent au fil de votre avancement."
+              icon="/pictos/picto-16.png"
+              title="Évaluation des connaissances"
+              desc="Des évaluations régulières pour mesurer l'acquisition des savoirs tout au long du parcours."
             />
             </div>
             <div className="fade-up" data-delay="150">
             <BadgeApproche
               icon="/pictos/picto-15.png"
-              title="Intelligence collective"
-              desc="Forums, groupes de coaching, partage d'expériences entre pairs."
+              title="Coaching des participant.es"
+              desc="Accompagnement personnalisé en petits groupes par des coaches expert·es."
               delay={150}
             />
             </div>
             <div className="fade-up" data-delay="300">
             <BadgeApproche
               icon="/pictos/picto-17.png"
-              title="Ancrage dans la pratique"
-              desc="Exercices concrets, études de cas, projets terrain."
+              title="Devoirs, études de cas"
+              desc="Exercices pratiques, études de cas et devoirs pour ancrer les apprentissages dans la réalité terrain."
               delay={300}
             />
             </div>
@@ -220,20 +221,20 @@ export default function ProgrammePage() {
               </div>
             </div>
 
-            {/* Grand 8 + texte */}
+            {/* Grand "Des modules" + texte */}
             <div>
               <div className="flex items-baseline gap-4 mb-2">
                 <span className="font-heading font-black leading-none select-none"
-                      style={{fontSize:'clamp(8rem,16vw,12rem)', color:'#622ed1', lineHeight:.85}}>
-                  8
+                      style={{fontSize:'clamp(3rem,8vw,6rem)', color:'#622ed1', lineHeight:.85}}>
+                  Des
                 </span>
                 <span className="font-heading font-black"
                       style={{fontSize:'clamp(2rem,5vw,4rem)', color:'#622ed1'}}>
-                  Modules
+                  modules
                 </span>
               </div>
               <p className="text-gray-600 text-base leading-relaxed" style={{maxWidth:'420px'}}>
-                Chaque module dure environ 2 semaines et combine lectures, vidéos, exercices et échanges.
+                En fonction de chaque cours est divisé en modules. Pour l&apos;admission par sélection, un module dure environ 1-2 semaines.
               </p>
               {/* Séparateur ♀♂ inline */}
               <p className="mt-3 text-xs select-none"
@@ -366,6 +367,18 @@ export default function ProgrammePage() {
             style={{background:'#ecc92f', color:'#321b45', boxShadow:'0 6px 20px rgba(236,201,47,.4)'}}>
             Candidatez ——→
           </Link>
+          <div className="flex gap-4 justify-center mt-6 flex-wrap">
+            <Link href="/charte-umo"
+              className="inline-flex items-center gap-2 px-8 py-3 rounded-full font-heading font-bold text-sm hover:-translate-y-1 transition-all duration-300"
+              style={{background:'#622ed1', color:'#fff', boxShadow:'0 4px 14px rgba(98,46,209,.3)'}}>
+              Charte UMO
+            </Link>
+            <Link href="https://umo.centre-odas.org/mes-cours"
+              className="inline-flex items-center gap-2 px-8 py-3 rounded-full font-heading font-bold text-sm hover:-translate-y-1 transition-all duration-300"
+              style={{border:'2px solid #34b7ad', color:'#34b7ad', background:'transparent'}}>
+              Accéder aux cours / cohorte →
+            </Link>
+          </div>
         </div>
       </section>
 

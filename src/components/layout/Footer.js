@@ -5,8 +5,7 @@ const footerLinks = {
   Programme: [
     { label: 'Présentation', href: '/programme' },
     { label: 'Cohortes',     href: '/cohortes' },
-    { label: 'Modules',      href: '/programme#modules' },
-    { label: 'Webinaires',   href: '/webinaires' },
+    { label: 'Charte UMO',   href: '/charte-umo' },
   ],
   Espace: [
     { label: 'Se connecter', href: '/plateforme' },

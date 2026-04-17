@@ -74,7 +74,6 @@ export default function HomePage() {
   const [visible, setVisible] = useState(false)
   useEffect(() => { setTimeout(() => setVisible(true), 80) }, [])
 
-  const [featRef,  featInView]  = useInView()
   const [stepsRef, stepsInView] = useInView()
   const [webRef,   webInView]   = useInView()
   const [quiRef,   quiInView]   = useInView()
@@ -213,88 +212,7 @@ export default function HomePage() {
           className="w-full object-cover" style={{height:'44px', objectPosition:'center'}} unoptimized />
       </div>
 
-      {/* ════ FEATURES ════ */}
-      <section ref={featRef} className="relative bg-white py-12 md:py-20 overflow-hidden">
-
-        {/* Décos gauche — feuilles teal picto-03 zones */}
-        <div className="absolute left-0 top-0 bottom-0 pointer-events-none opacity-80"
-             style={{width:'80px'}}>
-          <Image src="/pictos/picto-04.png" alt="" width={60} height={60}
-            className="object-contain absolute" style={{top:'20%', left:'-10px'}}/>
-          <Image src="/pictos/picto-04.png" alt="" width={40} height={40}
-            className="object-contain absolute" style={{bottom:'25%', left:'0'}}/>
-        </div>
-        {/* Feuilles jaunes droite */}
-        <div className="absolute right-0 top-0 bottom-0 pointer-events-none"
-             style={{width:'80px'}}>
-          <Image src="/pictos/picto-07.png" alt="" width={65} height={65}
-            className="object-contain absolute" style={{bottom:'30%', right:'-5px'}}/>
-          <Image src="/pictos/picto-05.png" alt="" width={50} height={50}
-            className="object-contain absolute" style={{top:'15%', right:'5px', opacity:.6}}/>
-        </div>
-
-        <div className="section-container">
-          <div className={`text-center mb-14 transition-all duration-700 ${featInView?'opacity-100 translate-y-0':'opacity-0 translate-y-8'}`}>
-            <div className="inline-block px-6 py-1 rounded-xl mb-1" style={{background:'rgba(213,179,253,0.35)'}}>
-              <h2 className="font-heading font-black" style={{fontSize:'clamp(2rem,4vw,3rem)',color:'#622ed1'}}>Des Formations</h2>
-            </div>
-            <h2 className="font-heading font-black leading-tight mb-4" style={{fontSize:'clamp(2rem,4vw,3rem)',color:'#ecc92f'}}>
-              Complètes et Engagées
-            </h2>
-            <p className="text-gray-600 text-base" style={{maxWidth:'520px',margin:'0 auto'}}>
-              Des modules conçus pour former des militant·es éclairé·es, capables d&apos;agir concrètement sur le terrain.
-            </p>
-          </div>
-
-          {/* 3 features haut */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8">
-            {features.slice(0,3).map((f,i) => (
-              <div key={i} className="text-center px-4 transition-all duration-500"
-                   style={{transitionDelay:`${i*120}ms`, opacity:featInView?1:0,
-                           transform:featInView?'translateY(0)':'translateY(20px)'}}>
-                <div className="flex justify-center mb-4">
-                  <Image src={f.img} alt={f.title} width={52} height={52} className="object-contain"/>
-                </div>
-                <h3 className="font-heading font-bold text-base mb-2"
-                    style={{color:'#622ed1', textDecoration:'underline', textDecorationColor:'#622ed1'}}>{f.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
-              </div>
-            ))}
-          </div>
-          {/* 2 features bas */}
-          <div className="grid grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-10"
-               style={{maxWidth:'500px', margin:'0 auto 2rem'}}>
-            {features.slice(3).map((f,i) => (
-              <div key={i} className="text-center px-4 transition-all duration-500"
-                   style={{transitionDelay:`${360+i*120}ms`, opacity:featInView?1:0,
-                           transform:featInView?'translateY(0)':'translateY(20px)'}}>
-                <div className="flex justify-center mb-4">
-                  <Image src={f.img} alt={f.title} width={52} height={52} className="object-contain"/>
-                </div>
-                <h3 className="font-heading font-bold text-base mb-2"
-                    style={{color:'#622ed1', textDecoration:'underline', textDecorationColor:'#622ed1'}}>{f.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="flex items-center justify-between flex-wrap gap-4">
-            <div/>
-            <Link href="/programme"
-              className="mx-auto inline-flex items-center gap-2 px-10 py-3 rounded-full text-white font-heading font-bold text-sm hover:-translate-y-1 transition-all duration-300 shadow-md"
-              style={{background:'#34b7ad'}}>
-              En savoir +
-            </Link>
-            {/* Picto-09 : femme avec laptop */}
-            <div style={{width:'110px', height:'110px', flexShrink:0}}>
-              <Image src="/pictos/picto-09.png" alt="Étudiante" width={110} height={110}
-                className="object-contain w-full h-full"/>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ════ BANDE SÉPARATEUR — picto-11 (séparateur symboles) ou picto-20 ════ */}
+      {/* ════ BANDE SÉPARATEUR — picto-20 ════ */}
       <GenderDivider/>
 
       {/* ════ COMMENT ÇA FONCTIONNE ════ */}
@@ -431,7 +349,7 @@ export default function HomePage() {
           <div className={`text-center mb-12 transition-all duration-700 ${eqInView?'opacity-100 translate-y-0':'opacity-0 translate-y-8'}`}>
             <h2 className="font-heading font-black inline-block px-6 py-2 rounded-2xl"
                 style={{fontSize:'clamp(2rem,4vw,3rem)', background:'rgba(213,179,253,0.25)'}}>
-              <span style={{color:'#622ed1'}}>Notre super </span><span style={{color:'#ecc92f'}}>Equipe</span>
+              <span style={{color:'#622ed1'}}>Comité </span><span style={{color:'#ecc92f'}}>Technique</span>
             </h2>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 md:gap-8">
