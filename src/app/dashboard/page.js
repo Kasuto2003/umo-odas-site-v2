@@ -36,7 +36,7 @@ export default function DashboardPage() {
   const [temoForm, setTemoForm] = useState(false)
   const [temoText, setTemoText] = useState('')
   const [temoSent, setTemoSent] = useState(false)
-  const moodleUrl = 'https://learn.umo.centre-odas.org'
+  const moodleUrl = 'https://learn.umo-centre-odas.org'
 
   return (
     <div className="min-h-screen bg-white">
