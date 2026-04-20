@@ -14,7 +14,7 @@ export default function PlatformePage() {
     return () => clearTimeout(t)
   }, [])
 
-  const moodleUrl = process.env.NEXT_PUBLIC_MOODLE_URL || 'https://learn.umo-centre-odas.org'
+  const moodleUrl = process.env.NEXT_PUBLIC_MOODLE_URL || 'https://learn.centre-odas.io'
 
   return (
     <>
