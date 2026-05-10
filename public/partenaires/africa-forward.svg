@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60">
+  <text x="4" y="22" font-family="Arial Black,sans-serif" font-size="13" font-weight="900" fill="#C0392B">AFRICA FORWARD</text>
+  <text x="4" y="38" font-family="Arial,sans-serif" font-size="9" fill="#666">Advisory and Foundation</text>
+  <polygon points="160,10 180,30 160,50 170,30" fill="#E74C3C"/>
+  <polygon points="170,10 190,30 170,50 180,30" fill="#C0392B"/>
+</svg>
