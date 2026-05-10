@@ -21,16 +21,16 @@ function useInView(threshold = 0.1) {
 
 /* ── Données équipe ── */
 const equipe = [
-  { nom: 'Dr. Béniel Agossou',       role: 'Directeur',                   organisation: 'Le Centre ODAS',                          pays: '🌍 Afrique',       photo: '/equipe/beniel-agossou.png',    categorie: 'odas' },
-  { nom: 'M. Noël Adanlao',          role: 'Coordinateur de programme',   organisation: 'Le Centre ODAS',                          pays: '🌍 Afrique',       photo: '/equipe/noel-adanlao.jpg',      categorie: 'odas' },
-  { nom: 'Dr. Ginette Hounkanrin',   role: 'Facilitatrice',               organisation: 'Pathfinder International',                pays: '🇧🇫 Burkina Faso', photo: '/equipe/ginette-hounkanrin.png', categorie: 'facilitation' },
-  { nom: 'Mme Cécile Yougbaré',      role: 'Facilitatrice',               organisation: 'Médecins du Monde',                      pays: '🇫🇷 France',       photo: '/equipe/cecile-yougbare.png',   categorie: 'facilitation' },
-  { nom: 'Mme Moinsalima Hassane',   role: 'Facilitatrice',               organisation: 'ANJSR',                                  pays: '🇸🇳 Sénégal',      photo: '/equipe/moinsalima-hassane.png', categorie: 'facilitation' },
-  { nom: 'Dr. Melchie Ibula Bwanga', role: 'Facilitatrice',               organisation: 'AJCAF-AS',                               pays: '🌍 Afrique',       photo: '/equipe/melchie-ibula.png',     categorie: 'facilitation' },
-  { nom: 'Saskia Hüsken',            role: 'Facilitatrice',               organisation: 'Rutgers International',                  pays: '🇳🇱 Pays-Bas',     photo: '/equipe/saskia-husken.png',     categorie: 'facilitation' },
-  { nom: 'Souwaiba Ibrahim',         role: 'Facilitatrice',               organisation: 'Ligue Nigérienne des Droits des Femmes', pays: '🇳🇪 Niger',        photo: '/equipe/souwaiba-ibrahim.png',  categorie: 'facilitation' },
-  { nom: 'Dr. Raqibat Idris',        role: 'Éditrice',                    organisation: 'GFMER',                                  pays: '🌍 Afrique',       photo: '/equipe/raqibat-idris.png',     categorie: 'edition' },
-  { nom: 'Prof. Aldo Campana',       role: 'Éditeur',                     organisation: 'GFMER',                                  pays: '🇨🇭 Suisse',       photo: '/equipe/aldo-campana.png',      categorie: 'edition' },
+  { nom: 'Dr. Béniel Agossou', role: 'Directeur', organisation: 'Le Centre ODAS', pays: '🌍 Afrique', photo: '/equipe/beniel-agossou.png', categorie: 'odas' },
+  { nom: 'M. Noël Adanlao', role: 'Coordinateur de programme', organisation: 'Le Centre ODAS', pays: '🌍 Afrique', photo: '/equipe/noel-adanlao.jpg', categorie: 'odas' },
+  { nom: 'Dr. Ginette Hounkanrin', role: 'Facilitatrice', organisation: 'Pathfinder International', pays: '🇧🇫 Burkina Faso', photo: '/equipe/ginette-hounkanrin.png', categorie: 'facilitation' },
+  { nom: 'Mme Cécile Yougbaré', role: 'Facilitatrice', organisation: 'Médecins du Monde', pays: '🇫🇷 France', photo: '/equipe/cecile-yougbare.png', categorie: 'facilitation' },
+  { nom: 'Mme Moinsalima Hassane', role: 'Facilitatrice', organisation: 'ANJSR', pays: '🇸🇳 Sénégal', photo: '/equipe/moinsalima-hassane.png', categorie: 'facilitation' },
+  { nom: 'Dr. Melchie Ibula Bwanga', role: 'Facilitatrice', organisation: 'AJCAF-AS', pays: '🌍 Afrique', photo: '/equipe/melchie-ibula.png', categorie: 'facilitation' },
+  { nom: 'Saskia Hüsken', role: 'Facilitatrice', organisation: 'Rutgers International', pays: '🇳🇱 Pays-Bas', photo: '/equipe/saskia-husken.png', categorie: 'facilitation' },
+  { nom: 'Souwaiba Ibrahim', role: 'Facilitatrice', organisation: 'Ligue Nigérienne des Droits des Femmes', pays: '🇳🇪 Niger', photo: '/equipe/souwaiba-ibrahim.png', categorie: 'facilitation' },
+  { nom: 'Dr. Raqibat Idris', role: 'Éditrice', organisation: 'GFMER', pays: '🌍 Afrique', photo: '/equipe/raqibat-idris.png', categorie: 'edition' },
+  { nom: 'Prof. Aldo Campana', role: 'Éditeur', organisation: 'GFMER', pays: '🇨🇭 Suisse', photo: '/equipe/aldo-campana.png', categorie: 'edition' },
 ]
 
 /* ── Carte membre animée ── */
@@ -125,9 +125,9 @@ export default function EquipePage() {
   const [heroVisible, setHeroVisible] = useState(false)
   useEffect(() => { setTimeout(() => setHeroVisible(true), 80) }, [])
 
-  const equipeOdas    = equipe.filter(m => m.categorie === 'odas')
+  const equipeOdas = equipe.filter(m => m.categorie === 'odas')
   const facilitateurs = equipe.filter(m => m.categorie === 'facilitation')
-  const editeurs      = equipe.filter(m => m.categorie === 'edition')
+  const editeurs = equipe.filter(m => m.categorie === 'edition')
 
   return (
     <>
@@ -155,8 +155,10 @@ export default function EquipePage() {
           <div className="absolute top-14 right-1/3 select-none font-black text-white/8" style={{ fontSize: '110px' }}>♀</div>
           <div className={`absolute top-36 left-1/3 transition-all duration-1000 delay-500 ${heroVisible ? 'opacity-25' : 'opacity-0'}`}
             style={{ animation: heroVisible ? 'floatSlow 8s ease-in-out infinite' : 'none' }}>
-            <div style={{ width: '28px', height: '28px', background: '#ecc92f',
-              clipPath: 'polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)' }} />
+            <div style={{
+              width: '28px', height: '28px', background: '#ecc92f',
+              clipPath: 'polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)'
+            }} />
           </div>
           <div className="absolute bottom-0 right-0 opacity-15 pointer-events-none">
             <Image src="/pictos/picto-03.png" alt="" width={180} height={220} className="object-contain" />
